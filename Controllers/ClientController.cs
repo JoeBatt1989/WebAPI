@@ -137,8 +137,14 @@ namespace WebAPI.Controllers
             client.FirstName = request.FirstName;
             client.LastName = request.LastName;
             client.Email = request.Email;
-            client.ContactDetails.PhoneType = request.ContactDetails.PhoneType;
-            client.ContactDetails.PhoneNumber = request.ContactDetails.PhoneNumber;
+
+            ContactDetails contactDetails = new ContactDetails()
+            {
+                PhoneType = request.ContactDetails.PhoneType,
+                PhoneNumber = request.ContactDetails.PhoneNumber
+            };
+
+            client.ContactDetails = contactDetails;
             return client;
         }
     }
