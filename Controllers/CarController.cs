@@ -125,7 +125,7 @@ namespace WebAPI.Controllers
 
         private IActionResult IsRequestValid(CarRequest request)
         {
-            if (request.Make == null || request.Model == null || request.Registration == null)
+            if (string.IsNullOrEmpty(request.Make) || string.IsNullOrEmpty(request.Model) || string.IsNullOrEmpty(request.Registration))
             {
                 return BadRequest("Please enter all mandatory car details");
             }

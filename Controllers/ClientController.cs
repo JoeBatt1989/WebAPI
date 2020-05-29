@@ -104,7 +104,7 @@ namespace WebAPI.Controllers
 
         private IActionResult IsRequestValid(ClientRequest request)
         {
-            if (request.FirstName == null || request.LastName == null || request.Email == null)
+            if (string.IsNullOrEmpty(request.FirstName) || string.IsNullOrEmpty(request.LastName) || string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.ContactDetails.PhoneNumber))
             {
                 return BadRequest("Please enter all mandatory details for client");
             }
@@ -114,18 +114,7 @@ namespace WebAPI.Controllers
                 return BadRequest("Title is not valid");
             }
 
-            ContactDetails contactDetails = new ContactDetails()
-            {
-                PhoneType = request.ContactDetails.PhoneType,
-                PhoneNumber = request.ContactDetails.PhoneNumber
-            };
-
-            if (contactDetails.PhoneNumber == null)
-            {
-                return BadRequest("Please enter all mandatory details for client");
-            }
-
-            if (!Enum.IsDefined(typeof(PhoneType), contactDetails.PhoneType))
+            if (!Enum.IsDefined(typeof(PhoneType), request.ContactDetails.PhoneType))
             {
                 return BadRequest("Phone type is not valid");
             }

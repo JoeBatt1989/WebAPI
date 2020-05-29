@@ -116,7 +116,7 @@ namespace WebAPI.Controllers
 
         private IActionResult IsRequestValid(AddressRequest request)
         {
-            if (request.AddressLine1 == null || request.Postcode == null)
+            if (string.IsNullOrEmpty(request.AddressLine1) || string.IsNullOrEmpty(request.Postcode))
             {
                 return BadRequest("Please enter all mandatory address details");
             }
