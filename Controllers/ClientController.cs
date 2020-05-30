@@ -76,6 +76,8 @@ namespace WebAPI.Controllers
                 client.FirstName = request.FirstName;
                 client.LastName = request.LastName;
                 client.Email = request.Email;
+                client.ContactDetails.PhoneType = request.ContactDetails.PhoneType;
+                client.ContactDetails.PhoneNumber = request.ContactDetails.PhoneNumber;
                 return Ok(client);
             }
             else
