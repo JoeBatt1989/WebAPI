@@ -111,14 +111,20 @@ namespace WebAPI.Controllers
                 return BadRequest("Please enter all mandatory details for client");
             }
 
-            if (!Enum.IsDefined(typeof(Title), request.Title))
+            if (Enum.TryParse(request.Title, false, out Title title))
             {
-                return BadRequest("Title is not valid");
+            }
+            else
+            {
+                return BadRequest($"Title {request.Title} is not valid");
             }
 
-            if (!Enum.IsDefined(typeof(PhoneType), request.ContactDetails.PhoneType))
+            if (Enum.TryParse(request.ContactDetails.PhoneType, false, out PhoneType phoneType))
             {
-                return BadRequest("Phone type is not valid");
+            }
+            else
+            {
+                return BadRequest($"Phone type {request.ContactDetails.PhoneType} is not valid");
             }
 
             if (!IsValidEmailAddress(request.Email))

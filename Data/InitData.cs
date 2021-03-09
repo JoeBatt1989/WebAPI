@@ -27,39 +27,39 @@ namespace WebAPI.Data
                 new Client
                 {
                     Id = new Guid("95FFF557-DC35-447D-BFD4-34D15E191BBD"),
-                    Title = Title.Mr,
+                    Title = Title.Mr.ToString(),
                     FirstName = "Tim",
                     LastName = "Smith",
                     Email = "Tim.Smith66@mailinator.com",
                     ContactDetails = new ContactDetails
                     {
-                        PhoneType = PhoneType.Home,
+                        PhoneType = PhoneType.Home.ToString(),
                         PhoneNumber = "01132687542"
                     }
                 },
                 new Client
                 {
                     Id = new Guid("F82A6929-CD9C-42E0-AEF1-4BBD260B54CD"),
-                    Title = Title.Mr,
+                    Title = Title.Mr.ToString(),
                     FirstName = "James",
                     LastName = "Lee",
                     Email = "James7612@mailinator.com",
                     ContactDetails = new ContactDetails
                     {
-                        PhoneType = PhoneType.Mobile,
+                        PhoneType = PhoneType.Mobile.ToString(),
                         PhoneNumber = "07959437865"
                     }
                 },
                 new Client
                 {
                     Id = new Guid("661CA7F8-988C-44E7-9F6B-09D0EDC24C25"),
-                    Title = Title.Dr,
+                    Title = Title.Dr.ToString(),
                     FirstName = "James",
                     LastName = "Lee",
                     Email = "James7612@mailinator.com",
                     ContactDetails = new ContactDetails
                     {
-                        PhoneType = PhoneType.Home,
+                        PhoneType = PhoneType.Home.ToString(),
                         PhoneNumber = "01132986677"
                     }
                 }

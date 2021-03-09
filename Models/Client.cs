@@ -7,7 +7,7 @@ namespace WebAPI.Models
     {
         public Guid Id { get; set; }
 
-        public Title Title { get; set; }
+        public string Title { get; set; }
 
         public string FirstName { get; set; }
 
@@ -20,7 +20,7 @@ namespace WebAPI.Models
 
     public class ClientRequest
     {
-        public Title Title { get; set; }
+        public string Title { get; set; }
 
         public string FirstName { get; set; }
 
