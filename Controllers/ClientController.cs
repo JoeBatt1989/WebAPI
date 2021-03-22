@@ -91,16 +91,16 @@ namespace WebAPI.Controllers
         {
             var client = clients.Find(c => c.Id.Equals(id));
 
-            if (client.Id != null)
+            if (client == null || client.Id == null)
+            {
+                return NotFound("Client not found");
+            }
+            else
             {
                 clients.RemoveAll(c => c.Id == id);
                 addresses.RemoveAll(a => a.ClientId == id);
                 cars.RemoveAll(c => c.ClientId == id);
                 return Ok("Client deleted successfully");
-            }
-            else
-            {
-                return NotFound("Client not found");
             }
         }
 
