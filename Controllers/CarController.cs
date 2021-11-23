@@ -1,13 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using WebAPI.Models;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
-using WebAPI.Data;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using WebAPI.Data;
+using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/car")]
     [ApiController]
     public class CarController : ControllerBase

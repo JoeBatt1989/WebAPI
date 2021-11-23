@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using WebAPI.Models;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using WebAPI.Data;
+using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/address")]
     [ApiController]
     public class AddressController : ControllerBase
